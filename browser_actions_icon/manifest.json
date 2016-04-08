@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name":"Turtle",
+  "version":"1.0",
+  "description": "不停旋转的图标",
+  "browser_action":{
+    "default_icon":{
+      "19": "images/icon19_0.png"
+    },
+    "default_title": "Turtle"
+  },
+  "background":{
+    "scripts":[
+      "js/background.js"
+    ]
+  }
+}
