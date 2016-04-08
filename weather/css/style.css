@@ -1,0 +1,95 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+html {
+  color: #000;
+}
+
+body {
+  text-align: center;
+  font: 12px arial;
+}
+
+img {
+  border:0;
+}
+.container {
+  position: relative;
+  width: 585px;
+  height: 201px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.072);
+}
+
+.weather-content {
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.lunar-mod {
+  height: 40px;
+  margin: 0 19px;
+  border-bottom:1px solid #efefef;
+}
+
+.lunar-mod span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-size: 12px;
+  float: left;
+}
+
+.lunar-calendar {
+  color: #666;
+}
+
+.lunar-festival {
+  color: #999;
+  margin-left: 6px;
+}
+
+.everyday-item {
+  float: left;
+  width: 105px;
+  overflow: hidden;
+}
+
+.everyday-item p {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+  font-size: 12px;
+}
+
+.everyday-title {
+  height: 34px;
+  line-height: 34px;
+  width: 100%;
+}
+
+.everyday-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 4px;
+  border: none;
+}
+
+.everyday-temp, .everyday-condition, .everyday-wind{
+  height: 18px;
+  line-height: 18px;
+}
+
+.everyday-item.is-today {
+  width: 161px;
+}
+
+.everyday-item.is-today p {
+  font-weight: bold;
+}
