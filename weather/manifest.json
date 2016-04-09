@@ -18,6 +18,6 @@
   },
   "options_page":"options.html",
   "permissions":[
-    "https://www.baidu.om/home/other/data/weatherInfo?city=*"
+    "https://www.baidu.com/home/other/data/weatherInfo?city=*"
   ]
 }
