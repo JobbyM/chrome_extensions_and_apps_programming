@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "天气预报",
   "version": "1.0",
-  "description":"查看未来两周的天气情况",
+  "description":"查看未来一周的天气情况",
   "icons":{
     "16":"images/icon16.png",
     "48":"images/icon48.png",
