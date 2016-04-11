@@ -1,0 +1,17 @@
+{
+  "manifest_version":2,
+  "name": "桌面提醒",
+  "version":"1.0",
+  "description": "桌面提醒",
+  "background":{
+    "scripts":[
+      "js/background.js"
+    ]
+  },
+  "permissions":[
+    "notifications"
+  ],
+  "web_accessible_resources":[
+    "images/*.png"
+  ]
+}
