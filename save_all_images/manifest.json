@@ -1,0 +1,18 @@
+{
+  "manifest_version":2,
+  "name": "Save All Images",
+  "version":"1.0",
+  "description": "save all images in current tab",
+  "background":{
+    "scripts":[
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "permissions":[
+    "activeTab",
+    "contextMenus",
+    "downloads"
+  ]
+
+}
