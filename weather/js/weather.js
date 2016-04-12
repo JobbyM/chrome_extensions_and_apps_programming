@@ -138,6 +138,14 @@ function httpRequest(url, callback){
   };
   xhr.send();
 }
+
+function updateDate(content){
+  var dateEl = containerEl.querySelector(".lunar-mod");
+
+  dateEl.querySelector(".lunar-calendar").textContent = content.week.split(" ")[1];
+  dateEl.querySelector(".lunar-festival").textContent = "农历 " + content.calendar.lunar;
+}
+
 function updateWeathear(date, content){
   var dateData = content[date];
   var dateEl = containerEl.querySelector("."+date);
@@ -174,6 +182,8 @@ function showWeather(result){
 
     containerEl = document.querySelector('.container');
     containerEl.style.display = 'none';
+
+    updateDate(content);
 
     for(var i = 0, len = dateArr.length; i < len; i ++){
       updateWeathear(dateArr[i], content);
