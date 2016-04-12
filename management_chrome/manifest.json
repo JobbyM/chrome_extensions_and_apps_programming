@@ -1,0 +1,15 @@
+{
+  "manifest_version":2,
+  "name": "管理你的浏览器",
+  "version":"1.0",
+  "description": "更好的管理你的浏览器",
+  "background":{
+    "scripts":[
+      "js/background.js"
+    ]
+  },
+  "permissions":[
+    "management"
+  ]
+
+}
