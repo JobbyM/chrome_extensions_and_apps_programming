@@ -14,7 +14,7 @@ chrome.contextMenus.onClicked.addListener(function(info, tab){
           chrome.downloads.download({
             url: url,
             conflictAction: 'uniquify',
-            saveAs: false
+            saveAs: true
           })
         });
       }
