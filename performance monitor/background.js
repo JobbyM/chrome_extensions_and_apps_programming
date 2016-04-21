@@ -5,7 +5,7 @@ chrome.app.runtime.onLaunched.addListener(function(){
   }else{
     chrome.app.window.create('main.html',{
       'id': 'main',
-      'innerBounds': {
+      'bounds': {
         'width': 542,
         'height': 360
       },
@@ -27,7 +27,7 @@ chrome.app.window.onMinimized.addListener(function(){
   // do something when the window is set to minimized;
 });
 
-chrome.app.window.onResotored.addListener(function(){
+chrome.app.window.onRestored.addListener(function(){
   // do something when the window is set to restored;
 });
 

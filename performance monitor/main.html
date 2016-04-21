@@ -36,14 +36,43 @@
     background: black;
   }
 
+  #box_body {
+    padding: 20px 0;
+  }
+
+  .chart {
+    margin-bottom: 20px;
+    font-size: 0;
+  }
+
+  .usage_item {
+    color: gray;
+    padding: 2px 0;
+    font-size: 14px;
+    border-bottom: #EEE 1px solid;
+    margin-bottom: 4px;
+  }
   </style>
 </head>
 <body>
-<div id="title_bar">A more free sytle window
+<div id="title_bar">Performance
   <a href="#" id="close"></a>
-  <a href="#" id="maximize"></a>
   <a href="#" id="minimize"></a>
 </div>
+<div id="box_body">
+  <div class="usage_item">CPU Usage</div>
+  <div class="chart">
+    <canvas id="cpu_total" width="100" height="100"></canvas>
+    <canvas id="cpu_history" width="400" height="100"></canvas>
+  </div>
+  <div class="usage_item">Memory Usage</div>
+  <div class="chart">
+    <canvas id="mem_total" width="100" height="100"></canvas>
+    <canvas id="mem_history" width="400" height="100"></canvas>
+  </div>
+</div>
 <script src="control.js"></script>
+<script src="Chart.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

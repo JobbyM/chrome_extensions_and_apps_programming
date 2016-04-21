@@ -7,9 +7,3 @@ document.getElementById('minimize').addEventListener('click',function(){
 document.getElementById('close').addEventListener('click',function(){
   current_window.hide();
 },false);
-
-document.getElementById('maximize').addEventListener('click',function(){
-  current_window.isMaximized ?
-    current_window.restore():
-    current_window.maximize();
-},false);
