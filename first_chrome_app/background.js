@@ -22,7 +22,7 @@ chrome.app.window.onMinimized.addListener(function(){
   // do something when the window is set to minimized;
 });
 
-chrome.app.window.onResotored.addListener(function(){
+chrome.app.window.onRestored.addListener(function(){
   // do something when the window is set to restored;
 });
 
