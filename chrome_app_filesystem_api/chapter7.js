@@ -6,12 +6,12 @@ document.getElementById('fileWriter').addEventListener('click',function(){
       },errorHandler);
     },errorHandler);
   });
-  chrome.fileSystem.chooseEntry({
-    type: 'saveFile',
-    suggestedName: 'log.txt'
-  },function(fileEntry){
-    fileEntry.createWriter(function(fileWriter){
-      // We'll do something with fileWriter later
-    },errorHandler);
-  });
+  // chrome.fileSystem.chooseEntry({
+  //   type: 'saveFile',
+  //   suggestedName: 'log.txt'
+  // },function(fileEntry){
+  //   fileEntry.createWriter(function(fileWriter){
+  //     // We'll do something with fileWriter later
+  //   },errorHandler);
+  // });
 },false);
