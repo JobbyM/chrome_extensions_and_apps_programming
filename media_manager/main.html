@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Manager</title>
+  <style>
+  @font-face {
+    font-family: 'iconfont';
+    src: url('icons/iconfont.woff') format('woff')
+  }
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background: #2D2D2D;
+  }
+
+  #appTitle {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #CCC;
+    background: #222;
+  }
+
+  #path {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    color: #888;
+    font-size: 16px;
+    background: #222;
+    border-bottom: black 1px solid;
+    box-sizing: border-box;
+  }
+
+  #path span {
+    display: block;
+    float: left;
+  }
+
+  #path span.name {
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #path span.pointer {
+    padding: 0 10px 0 5px;
+  }
+
+  #container .item {
+    display: block;
+    height: 100px;
+    width: 100px;
+    float: left;
+    color: white;
+  }
+
+  #container .item .icon {
+    display: block;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-size: 60px;
+    font-family: 'iconfont';
+  }
+
+  #container .item .text {
+    display: block;
+    text-align: center;
+    padding: 0 5px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+<div id="appTitle">Media Manager</div>
+<div id="path"><span class="name">媒体库</span><span class="pointer">>></span></div>
+<div id="container"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
