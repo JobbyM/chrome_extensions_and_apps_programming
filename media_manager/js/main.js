@@ -32,3 +32,38 @@ document.getElementById('edit').addEventListener('click',function(){
     interactive: 'yes'
   },listMediaGalleries);
 },false);
+
+var scanning = false;
+
+document.getElementById('scan').addEventListener('click',function(){
+  scanning ?
+    chrome.mediaGalleries.startMediaScan && chrome.mediaGalleries.startMediaScan():
+    chrome.mediaGalleries.cancelMediaScan && chrome.mediaGalleries.cancelMediaScan();
+},false);
+
+document.getElementById('error').addEventListener('click',function(){
+  this.style.dislay = 'none';
+},false);
+
+chrome.mediaGalleries.onScanProgress && chrome.mediaGalleries.onScanProgress.addListener(function(details){
+  switch(details.type){
+    case 'start':
+      scanning = true;
+      document.getElementById('loading').style.display = 'block';
+      break;
+    case 'cancel':
+      scanning = false;
+      document.getElementById('loading').style.display = 'none';
+      break;
+    case 'finish':
+      scanning = false;
+      document.getElementById('loading').style.display = 'none';
+      chrome.mediaGalleries.addScanResults(listMediaGalleries);
+      break;
+    case 'error':
+      scanning = false;
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+      break;
+  }
+});
