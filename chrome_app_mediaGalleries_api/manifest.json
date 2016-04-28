@@ -1,0 +1,19 @@
+{
+  "app":{
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "manifest_version": 2,
+  "name": "Chrome App mediaGalleries API",
+  "description": "Chrome App mediaGalleries API",
+  "version": "1.0",
+  "icons": {
+    "16":"images/icon16.png",
+    "48":"images/icon48.png",
+    "128":"images/icon128.png"
+  },
+  "permissions": [
+    {"mediaGalleries": ["read", "allAutoDetected"]}
+  ]
+}

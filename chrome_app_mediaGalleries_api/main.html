@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chrome App mediaGalleries API</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    border: #EEE 1px solid;
+  }
+
+  #title_bar {
+    -webkit-app-region: drag;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    background: #EEE;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  #title_bar a {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    float: right;
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    border: black 1px solid;
+    box-sizing: border-box;
+    border-radius: 6px;
+  }
+
+  #title_bar a:hover {
+    background: black;
+  }
+
+  </style>
+</head>
+<body>
+<div id="title_bar">
+  <a href="#" id="close"></a>
+  <a href="#" id="minimize"></a>
+</div>
+<script src="control.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
