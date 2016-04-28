@@ -26,6 +26,16 @@
     background: #222;
   }
 
+  #edit {
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'iconfont';
+    height: 20px;
+    line-height: 20px;
+    padding: 5px;
+    cursor: pointer;  
+  }
+
   #path {
     height: 40px;
     line-height: 40px;
@@ -83,7 +93,7 @@
   </style>
 </head>
 <body>
-<div id="appTitle">Media Manager</div>
+<div id="appTitle">Media Manager<span id="edit">&#x3466;</span></div>
 <div id="path"><span class="name">媒体库</span><span class="pointer">>></span></div>
 <div id="container"></div>
 <script src="js/main.js"></script>

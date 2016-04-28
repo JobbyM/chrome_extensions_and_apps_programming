@@ -25,3 +25,10 @@ function listMediaGalleries(fileSystemArray){
 }
 
 getMedia();
+
+document.getElementById('edit').addEventListener('click',function(){
+  document.getElementById('container').innerHTML = '';
+  chrome.mediaGalleries.getMediaFileSystems({
+    interactive: 'yes'
+  },listMediaGalleries);
+},false);
