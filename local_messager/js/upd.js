@@ -105,5 +105,17 @@ function dup(){
         callback();
       }
     }.bind(this));
+  }.bind(this),
+
+  this.getInfo = function(callback){
+    _udp.getInfo(this.socketId, callback);
+  }.bind(this),
+
+  this.getSockets = function(callback){
+    _udp.getSockets(callback);
+  }.bind(this),
+
+  this.getGroups = function(callback){
+    _udp.getJoinedGroups(this.socketId, callback);
   }.bind(this)
 }
