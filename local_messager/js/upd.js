@@ -61,5 +61,49 @@ function dup(){
         }
       }.bind(this);
     }.bind(this));
+  }.bind(this),
+
+  this.joinGroup = function(address, callback){
+    _udp.joinGroup(this.socketId, address, function(code){
+      if(code < 0){
+        this.error(code);
+        return false;
+      }else{
+        callback();
+      }
+    }.bind(this));
+  }.bind(this),
+
+  this.leaveGroup = function(address, callback){
+    _udp.leaveGroup(this.soketId, address, function(code){
+      if(code < 0){
+        this.error(code);
+        return false;
+      }else{
+        callback();
+      }
+    }.bind(this));
+  }.bind(this),
+
+  this.setMulticastTTL = function(ttl, callback){
+    _udp.setMulticastTimeToLive(this.socketId, ttl, function(code){
+        if(code < 0){
+          this.error(code);
+          return false;
+        }else{
+          callback();
+        }
+    }.bind(this));
+  }.bind(this),
+
+  this.setMulticastLoopback = function(enabled, callback){
+    _udp.setMulticastLoopback(this.socketI, enabled, function(code){
+      if(code < 0){
+        this.error(code);
+        return false;
+      }else{
+        callback();
+      }
+    }.bind(this));
   }.bind(this)
 }
