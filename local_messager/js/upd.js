@@ -1,4 +1,4 @@
-function dup(){
+function udp(){
   var _udp = chrome.sockets.udp;
   this.option = {},
   this.socketId = 0,
