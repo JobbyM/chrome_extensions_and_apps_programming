@@ -6,30 +6,30 @@ function udp(){
   this.localPort = 0,
 
   this.create = function(callback){
-    _upd.create(this.option, function(socketInfo){
+    _udp.create(this.option, function(socketInfo){
       this.socketId = socketInfo.socketId;
       callback();
     }.bind(this));
   }.bind(this),
 
   this.update = function(){
-    _upd.update(this.socketId, newSocketOption, callback);
+    _udp.update(this.socketId, newSocketOption, callback);
   }.bind(this),
 
   this.pause = function(isPaused, callback){
     _udp.setPaused(this.socketId, isPaused, callback);
-  }.bind(tihs),
+  }.bind(this),
 
   this.bind = function(callback){
-    _upd.bind(this.socketId, this.localAddress, this.localPort, callback);
+    _udp.bind(this.socketId, this.localAddress, this.localPort, callback);
   }.bind(this),
 
   this.close = function(callback){
-    _upd.close(this.socketId, callback);
+    _udp.close(this.socketId, callback);
   }.bind(this),
 
   this.send = function(address, port, data, callback){
-    _upd.send(this.socketId, data, address, port, callback);
+    _udp.send(this.socketId, data, address, port, callback);
   }.bind(this),
 
   this.receive = function(info){
@@ -50,16 +50,16 @@ function udp(){
             callback();
           }
       }.bind(this));
-      _upd.onReceive.addListener(function(info){
+      _udp.onReceive.addListener(function(info){
         if(info.socketId = this.socketId){
           this.receive(info);
         }
       }.bind(this));
-      _upd.onReceiveError.addListener(function(info){
+      _udp.onReceiveError.addListener(function(info){
         if(info.socketId == this.socketId){
           this.error(info.resultCode);
         }
-      }.bind(this);
+      }.bind(this));
     }.bind(this));
   }.bind(this),
 

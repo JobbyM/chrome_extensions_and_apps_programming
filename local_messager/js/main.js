@@ -9,7 +9,7 @@ document.getElementById('msg').addEventListener('keyup', function(e){
 },false);
 
 chrome.runtime.onMessage.addListener(function(message, sender, callback){
-  if(message.action == 'recive'){
+  if(message.action == 'receive'){
     var el = document.createElement('div');
     el.textContent = decodeURIComponent(message.msg);
     document.getElementById('history').appendChild(el);
