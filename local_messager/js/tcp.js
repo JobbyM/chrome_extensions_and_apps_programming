@@ -42,5 +42,28 @@ function tcp(){
 
   this.init = function(callback){
     this.create(callback);
-  }.bind(this)
+  }.bind(this),
+
+  this.connect = function(address, port, callback){
+    _tcp.connect(this.socketId, address, port, function(){
+      _tcp.onReceive.addListener(function(info){
+        if(info.socketId == this.socketId){
+          this.receive(info);
+        }
+      }.bind(this));
+      _tcp.onReceiveError.addListener(function(info){
+        if(info.socketId == this.socketId){
+          this.error(info.resultCode);
+        }
+      }.bind(this));
+    }.bind(this));
+  }.bind(this),
+
+  this.send = function(data, callback){
+    _tcp.send(this.socketId, data, callback);
+  }.bind(this),
+
+  this.receive = function(info){
+    console.log('Received data.');
+  }
 }
