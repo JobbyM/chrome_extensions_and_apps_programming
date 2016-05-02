@@ -66,23 +66,4 @@ function tcpServer(){
   this.getSockets = function(callback){
     _tcpServer.getSockets(callback)
   }.bind(this)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
