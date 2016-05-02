@@ -57,7 +57,15 @@ function tcpServer(){
 
   this.accept = function(info){
     console.log('New connection.');
-  }
+  },
+
+  this.getInfo = function(callback){
+    _tcpServer.getInfo(this.socketId, callback);
+  }.bind(this),
+
+  this.getSockets = function(callback){
+    _tcpServer.getSockets(callback)
+  }.bind(this)
 
 
 
