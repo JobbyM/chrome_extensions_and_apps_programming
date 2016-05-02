@@ -65,5 +65,13 @@ function tcp(){
 
   this.receive = function(info){
     console.log('Received data.');
-  }
+  },
+
+  this.getInfo = function(callback){
+    _tcp.getInfo(this.socketId, callback);
+  }.bind(this),
+
+  this.getSockets = function(callback){
+    _tcp.getSockets(callback);
+  }.bind(this)
 }
