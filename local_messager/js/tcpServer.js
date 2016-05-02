@@ -28,5 +28,53 @@ function tcpServer(){
 
   this.init = function(callback){
     this.create(callback);
-  }.bind(this)
+  }.bind(this),
+
+  this.listen = function(address, port, callback){
+    _tcpServer.listen(this.socketId, address, port, function(code){
+      if(code < 0){
+        this.error(code);
+        return false;
+      }else{
+        _tcpServer.onAccept.addListener(function(info){
+          if(info.socketId == this.socketId){
+            this.accept(info);
+          }
+        }.bind(this));
+        _tcpServer.onAcceptError.addListen(function(info){
+          if(info.socketId == this.socketId){
+            this.error(info.resultCode);
+          }
+        }.bind(this));
+        callback();
+      }
+    }.bind(this));
+  }.bind(this),
+
+  this.error = function(code){
+    console.log('An error occurred with code ' + code);
+  },
+
+  this.accept = function(info){
+    console.log('New connection.');
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
