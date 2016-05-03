@@ -35,3 +35,41 @@ document.getElementById('pause').addEventListener('click',function(){
 document.getElementById('resume').addEventListener('click',function(){
   chrome.tts.resume();
 },false);
+
+document.getElementById('getVoices').addEventListener('click',function(){
+  chrome.tts.getVoices(function(voices){
+    // do something with voices
+    console.log(voices);
+    var utterance = "";
+    for (var i = 0; i < voices.length; i++) {
+      voices[i].voiceName;
+      voices[i].lang;
+      switch(voices[i].lang){
+        case 'zh-CN':
+          utterance = "你好，世界！";
+          break;
+        case 'zh-HK':
+          utterance = "你好，世界！";
+          break;
+        case 'zh-TW':
+          utterance = "你好，世界！";
+          break;
+        case 'en-US':
+          utterance = "Hello, world!";
+          break;
+        default:
+          utterance = "Hello, world!";
+      }
+
+      chrome.tts.speak(utterance,{
+        voiceName: voices[i].voiceName,
+        lang: voices[i].lang,
+        enqueue: true
+      },function(){
+        if(chrome.runtime.lastError){
+          console.log('Error: ' + chrome.runtime.lastError.message);
+        }
+      })
+    }
+  });
+},false);
