@@ -5,9 +5,9 @@
     }
   },
   "manifest_version": 2,
-  "name": "The first Chrome App",
+  "name": "The tts Chrome App",
   "version": "1.0",
-  "description": "The first Chrome App",
+  "description": "The tts Chrome App",
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
