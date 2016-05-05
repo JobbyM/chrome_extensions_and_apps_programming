@@ -101,7 +101,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  padding-left: 100px;
+  padding-right: 100px;
   font-size: 14px;
 }
 
@@ -115,7 +115,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 100px;
   height: 18px;
 }
 

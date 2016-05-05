@@ -5,7 +5,13 @@ chrome.app.runtime.onLaunched.addListener(function(){
   }else{
     chrome.app.window.create('main.html',{
       'id': 'main',
-      'frame':'none'
+      'frame':'none',
+      'innerBounds':{
+        'minWidth': 930,
+        'minHeight': 102,
+        'maxWidth': 930,
+        'maxHeight': 102
+      }
     });
   }
 });
