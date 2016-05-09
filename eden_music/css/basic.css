@@ -286,7 +286,7 @@ body {
 }
 
 .play-btn:hover {
-  background-position: -30px; 0;
+  background-position: -30px 0;
 }
 
 .player-controls .next-btn {

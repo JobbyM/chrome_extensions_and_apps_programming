@@ -25,7 +25,7 @@
       play: 1, // 播放
       pause: 2, // 暂停
       buffer: 3, // 缓冲
-      over: 4 // 结束
+      over: 4, // 结束
       exception: 5, // 异常
       error: 6 // 错误
     };
@@ -237,10 +237,10 @@
 
       opt.me = options.me || null;
       // handle timeout
-      opt.timeout = typeof options.timout = parseInt(options.timeout) == 'number'?
+      opt.timeout = typeof (options.timout = parseInt(options.timeout)) == 'number'?
         options.timeout : 60;
       // handle beginTime
-      opt.beginTime = typeof options.beginTime = parseInt(options.beginTime) == 'number'?
+      opt.beginTime = typeof (options.beginTime = parseInt(options.beginTime)) == 'number'?
         options.beginTime : 0;
       // handle event callback
       opt.onReady = typeof options.onReady == 'function'? options.onReady : '';
@@ -441,7 +441,7 @@ BasePlayer.prototype = {
     }
     if(this.getCurrentTime()>60 && this.showChange==true){
       this.bufferSum --;
-    }else if(this.getCurrentTime()<){
+    }else if(this.getCurrentTime()<60){
       this.bufferSum = 0;
     }
     this.currentTime = Math.floor(__sec);
