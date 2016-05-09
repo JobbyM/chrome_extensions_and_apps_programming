@@ -765,7 +765,3 @@ BasePlayer.prototype = {
   }
 
 }
-
-var currentPlayer = new BasePlayer();
-currentPlayer.init();
-currentPlayer.run();

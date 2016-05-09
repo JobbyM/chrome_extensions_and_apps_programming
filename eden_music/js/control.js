@@ -13,3 +13,17 @@ document.getElementById('maximize').addEventListener('click',function(){
     current_window.restore():
     current_window.maximize();
 },false);
+
+document.getElementById('E_prevBtn').addEventListener('click',function(){
+
+},false);
+
+document.getElementById('E_playBtn').addEventListener('click',function(){
+  var currentPlayer = new BasePlayer();
+  currentPlayer.init();
+  currentPlayer.run();
+},false);
+
+document.getElementById('E_nextBtn').addEventListener('click',function(){
+
+},false);
