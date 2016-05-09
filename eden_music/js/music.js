@@ -712,7 +712,58 @@ BasePlayer.prototype = {
 
   onKeyDown : function(__keyCode){
 
+  },
+
+  _translateTopInfo : function(){
+      var infoStr = '';
+      if(this.infoObj && this.infoObj.type && this.playList && typeof this.playPos == 'number'){
+        if(this.infoObj.type){
+          if(this.playList.length == 1){
+            infoStr = this.infoObj.name || '';
+          }else{
+            infoStr = this.playList[this.playPos].name;
+          }
+          infoStr = (this.infoObj.zone && infoStr) ? '[' + this.infoObj.zone + ']' + infoStr : infoStr;
+        }
+      }
+      return infoStr;
+
+  },
+
+  init : function(__playList, __playPos, __breakpoint, __isLoop, __infoObj, __restartArgs){
+    var me = this;
+    this.infoObj = __infoObj;
+
+    if(__playList && __playList instanceof Array){
+      this.playList = __playList;
+    }
+
+    this.playPos = __playPos || 0;
+    this.breakpoint = __breakpoint || 0;
+    this.isLoop = __isLoop == true ? true : false;
+    this.restartArgs = __restartArgs;
+  },
+
+  run : function(){
+      if(this.infoObj && this.playList.length > 0){
+        this.uiInit();
+        this.uiSetInfoText(this._translateTopInfo());
+        this.doPlay(this.playList[this.playPos].actionURL, this.breakpoint)
+      }
+  },
+
+  stop : function(){
+    this.doStop();
+  },
+
+  destroy : function(){
+    this.playList = [];
+    this.playPos = 0;
+    this.isLoop = false;
+    this.breakpoint = 0;
+    this.uiDestory();
   }
+
 }
 
 var currentPlayer = new BasePlayer();
