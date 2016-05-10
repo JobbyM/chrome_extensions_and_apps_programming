@@ -264,9 +264,14 @@
         return false;
       }
 
-      if(mediaObj.play){
-        mediaObj.play(opt.url, opt.beginTime);
+      if(!mediaObj||mediaObj==null){
+        createNewMediaPlayer();
       }
+
+      changestatus(status.ready);
+      mediaObj.src = opt.url;
+      mediaObj.currentTime = currentTime = opt.beginTime;
+      mediaObj.play();
 
       console.log('playCore ready end');
       return true;
@@ -332,10 +337,15 @@
     }
 
     playerCore.getCurrentTime = function(){
-      currentTime = mediaObj.getCurrentTime();
+      currentTime = mediaObj.currentTime;
       return currentTime ? currentTime : 0;
     }
 
+    playerCore.getTotalTime = function(){
+      console.log(mediaObj);
+      totalTime = mediaObj.duration;
+      return totalTime ? totalTime : 0;
+    }
     playerCore.getBufferNum = function(){
       return bufferNumber;
     }
@@ -343,6 +353,8 @@
     playerCore.getOpt = function(){
       return opt;
     }
+
+    return playerCore;
   }();
 })();
 
@@ -473,6 +485,7 @@ BasePlayer.prototype = {
   },
 
   catchReady : function(){
+    console.log('catchReady');
     playVideoIsOver = false;
     var me = this;
     this.playSuccessFlag = true;
@@ -630,7 +643,7 @@ BasePlayer.prototype = {
   },
 
   playing : function(){
-    if(this.playingStatus == Eden.palyer.status.play && this.ui_flg_seeking == false){
+    if(this.playingStatus == Eden.player.status.play && this.ui_flg_seeking == false){
       this.playingTimerCount ++;
       var tmpCurrentTime = Eden.player.getCurrentTime();
       this.currentTime = tmpCurrentTime;
@@ -668,6 +681,26 @@ BasePlayer.prototype = {
     this.ui_str_info = __str;
   },
 
+  uiSetToatalTime : function(){
+
+  },
+
+  uiSetCurrentTime : function(){
+
+  },
+
+  uiDisplayProgressAndInfo : function(){
+
+  },
+
+  uiDisplayPause : function(){
+
+  },
+
+  uiDisplayBuffer : function(){
+
+  },
+
   onReady : function(){
     this.uiSetToatalTime(this.totalTime);
   },
@@ -695,7 +728,7 @@ BasePlayer.prototype = {
   },
 
   onStop : function(){
-    shit.uiDisplayBuffer(false);
+    this.uiDisplayBuffer(false);
   },
 
   onOver : function(){
@@ -764,4 +797,8 @@ BasePlayer.prototype = {
     this.uiDestory();
   }
 
+}
+
+function $(__id){
+  return document.getElementById(__id)
 }
