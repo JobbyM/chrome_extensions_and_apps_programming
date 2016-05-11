@@ -643,6 +643,7 @@ BasePlayer.prototype = {
   },
 
   playing : function(){
+    console.log('playing:' + new Date().getTime());
     if(this.playingStatus == Eden.player.status.play && this.ui_flg_seeking == false){
       this.playingTimerCount ++;
       var tmpCurrentTime = Eden.player.getCurrentTime();
