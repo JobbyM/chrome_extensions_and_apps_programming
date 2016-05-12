@@ -116,6 +116,10 @@ Eden.player = function(){
     console.log('removeAllMediaPlayer end');
   }
 
+  function onPlayReady(){
+
+  }
+
   playerCore.init = function(){
     var loop = false;      // 是否循环
     var totalTime = 0;     // 总时间
@@ -139,6 +143,13 @@ Eden.player = function(){
         createNewMediaPlayer();
       }
     }
+
+    mediaObj.addEventListener('loadeddata',onPlayReady)
+
+    mediaObj.addEventListener('abort',playerCore.stop);
+    // mediaObj.addEventListener('play',)
+    mediaObj.addEventListener('pause',playerCore.pause);
+
     //handle options.url,set mediaUrl;
     if(options.url && typeof options.url == 'string') {
       mediaUrl = options.url;
