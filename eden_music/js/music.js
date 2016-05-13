@@ -127,6 +127,7 @@ Eden.player = function(){
   }
 
   playerCore.ready = function(){
+    console.log('playerCore ready');
     var options = (arguments && arguments[0]) || {};
     currentTime = totalTime = 0;
     opt.me = options.me || null;
@@ -166,18 +167,21 @@ Eden.player = function(){
   }
 
   playerCore.pause = function(){
+    console.log('playerCore pause');
     if(!mediaObj.paused){
       mediaObj.pause();
     }
   }
 
   playerCore.resume = function(){
+    console.log('playerCore resume');
     if(mediaObj.paused){
       mediaObj.paused = false;
     }
   }
 
   playerCore.stop = function(){
+    console.log('playerCore stop');
     if(mediaObj){
       mediaObj.src = null;
       removeAllMediaPlayer();
@@ -185,10 +189,12 @@ Eden.player = function(){
   }
 
   playerCore.getTotalTime = function(){
+    console.log('playerCore getTotalTime');
     return totalTime = mediaObj.duration || 0;
   }
 
   playerCore.getCurentTime = function(){
+    console.log('playerCore getCurrentTime');
     return currentTime = mediaObj.currenttime || 0;
   }
   return playerCore;
