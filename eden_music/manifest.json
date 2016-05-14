@@ -6,7 +6,7 @@
   },
   "manifest_version": 2,
   "name": "Eden MUSIC Chrome App",
-  "version": "1.0",
+  "version": "1.5",
   "description": "Eden MUSIC Chrome App",
   "icons": {
     "16": "images/icon16.png",
