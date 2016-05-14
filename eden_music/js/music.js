@@ -163,6 +163,7 @@ Eden.player = function(){
     opt.beginTime = typeof (options.beginTime = parseInt(options.beginTime)) == 'number' ? options.beginTime : 0;
     mediaObj.src = opt.url;
     mediaObj.currentTime = opt.beginTime;
+    mediaObj.loop = true;
     mediaObj.play();
   }
 
