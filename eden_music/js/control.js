@@ -25,12 +25,16 @@ document.getElementById('E_prevBtn').addEventListener('click',function(){
 
 document.getElementById('E_playBtn').addEventListener('click',function(){
   event.preventDefault();
-  currentPlayer = new EPlayer();
-  var __playList = [{
-    'actionURL' : 'data/Star Sky_Two Steps From Hell_Battlecry.mp3'
-  }];
-  currentPlayer.init(__playList, 0, 0);
-  currentPlayer.run();
+  if(!currentPlayer){
+    currentPlayer = new EPlayer();
+    var __playList = [{
+      'actionURL' : 'data/Star Sky_Two Steps From Hell_Battlecry.mp3'
+    }];
+    currentPlayer.init(__playList, 0, 0);
+    currentPlayer.run();
+  }else{
+    currentPlayer.doPause();
+  }
 },false);
 
 document.getElementById('E_nextBtn').addEventListener('click',function(){
